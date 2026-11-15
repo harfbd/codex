@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="一位教師的四個 Codex 工作現場。20 頁離線互動體驗雜誌。">
+<title>我用 Codex 做了什麼｜個人體驗誌</title>
+<style>
+:root{color-scheme:light;--ink:#24241e;--muted:#5f5d54;--paper:#fffdf6;--line:#c9c2af;--accent:#a13d25;--outside:#e8e1d2}
+*{box-sizing:border-box}body{margin:0;background:var(--outside);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+button,a{font:inherit}button{cursor:pointer;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:.44rem .8rem}button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}button:disabled{opacity:.44;cursor:default}button[aria-pressed=true]{background:var(--ink);color:var(--paper)}:focus-visible{outline:3px solid #0c6882;outline-offset:4px}
+.shell{max-width:1152px;margin:auto;padding:0 clamp(12px,3vw,40px)}header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:.75rem 0}.brand{font-weight:800;letter-spacing:.12em;font-size:.84rem}.brand small{color:var(--muted);margin-left:.7em}
+.stage{perspective:1600px}.page{background:var(--paper);min-height:clamp(500px,72vh,730px);display:grid;grid-template-rows:auto 1fr auto;border:1px solid var(--line);padding:clamp(19px,4vw,53px);box-shadow:0 18px 50px #44361b22;transform-origin:left center;position:relative;isolation:isolate}.page[data-direction=back]{transform-origin:right center}.turn{animation:turn .48s cubic-bezier(.2,.8,.2,1)}@keyframes turn{from{transform:rotateY(-12deg);opacity:.42}to{transform:rotateY(0);opacity:1}}.page[data-direction=back].turn{animation-name:back}@keyframes back{from{transform:rotateY(12deg);opacity:.42}to{transform:rotateY(0);opacity:1}}
+.kicker,.folio,.tiny{font:600 .75rem/1.45 ui-monospace,monospace;letter-spacing:.13em}.kicker{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:11px;color:var(--accent)}.folio{display:flex;justify-content:space-between;gap:10px;margin-top:24px;padding-top:11px;border-top:1px solid var(--line);color:var(--muted)}
+.spread{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(22px,5vw,60px);padding:clamp(21px,5vh,50px) 0}.copy h1{font:800 clamp(2rem,5.1vw,4.2rem)/1.13 "Songti TC","Noto Serif TC",serif;letter-spacing:-.045em;margin:0 0 .48em;text-wrap:balance}.copy p{max-width:37ch;margin:.8em 0 0}.copy .deck{font-size:clamp(1.02rem,2vw,1.24rem);font-weight:700;color:var(--accent)}.cover .copy h1{font-size:clamp(2.8rem,7.5vw,6.3rem)}.cover .art{background:#24241e;color:#fff8e8}.cover .art .big{color:#fff8e8}.cover .art .artlabel{color:#f7cf92}
+.art{min-width:0;background:var(--tint,#f0e1cd);border-top:4px solid var(--accent);padding:clamp(15px,3vw,29px);position:relative;overflow:hidden}.artlabel{color:var(--accent);margin-bottom:10px}.art svg{display:block;width:100%;height:auto;max-height:230px}.big{font:bold clamp(1.8rem,4vw,3.25rem)/1.1 Georgia,serif;color:var(--accent);margin:7px 0}.art p{margin:.4em 0}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.chips button{font-size:.88rem}.visual-output{padding:12px;background:#fffdf6a8;border:1px solid var(--line)}.visual-output table{width:100%;border-collapse:collapse;font-size:.86rem}.visual-output td,.visual-output th{text-align:left;padding:4px;border-bottom:1px solid var(--line)}.matched{background:#f1dcb5;font-weight:700}.fill{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}.litre,.partial{border:1px solid #2d625b;border-radius:3px;background:#397c70;color:#fff;min-width:38px;text-align:center;padding:3px}.partial{background:#d2e8e1;color:#24463f}.range{width:100%;accent-color:var(--accent)}
+.toc{display:grid;gap:7px}.toc button{display:flex;justify-content:space-between;text-align:left;gap:10px}.toc button span{color:var(--muted);white-space:nowrap}
+.nav{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 0 18px}.progress{text-align:center;display:grid;gap:3px;justify-items:center}progress{width:min(100%,300px);height:5px;accent-color:var(--accent)}.hint{text-align:center;margin:0 0 14px;color:var(--muted);font-size:.76rem}
+dialog{border:1px solid var(--line);background:var(--paper);color:var(--ink);width:min(92vw,520px);max-height:85vh;padding:20px}dialog::backdrop{background:#24241eaa}.dialoghead{display:flex;justify-content:space-between;align-items:center;gap:12px}.dialoghead h2{margin:0 0 8px}
+@media(max-width:700px){.spread{grid-template-columns:1fr;align-items:start}.page{min-height:0}.art svg{max-height:170px}.folio{margin-top:5px}.hint{display:none}.brand small{display:none}.nav{position:sticky;bottom:0;background:var(--outside);z-index:2;padding:8px 0}.art{padding:15px}.copy h1{text-wrap:pretty}}
+@media(prefers-reduced-motion:reduce){.turn,.page[data-direction=back].turn{animation:none}}
+@media print{header,.nav,.hint,dialog{display:none}.page{box-shadow:none;min-height:0}.shell{max-width:none}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header><div class="brand">CODEX FIELD NOTES <small>個人體驗誌</small></div><button type="button" id="openContents">目錄</button></header>
+<main class="stage" id="stage"><article class="page" id="page" aria-labelledby="title"></article></main>
+<nav class="nav" aria-label="翻頁"><button type="button" id="prev">← 上一頁</button><div class="progress"><output class="tiny" id="count" aria-live="polite"></output><progress id="progress" value="1" max="20" aria-label="閱讀進度"></progress></div><button type="button" id="next">下一頁 →</button></nav>
+<p class="hint">← → 鍵翻頁　｜　觸控螢幕可左右滑動</p>
+</div>
+<dialog id="contents" aria-labelledby="tocTitle"><div class="dialoghead"><h2 id="tocTitle">雜誌目錄</h2><form method="dialog"><button>關閉</button></form></div><div class="toc" id="dialogLinks"></div></dialog>
+<noscript>這本互動雜誌需要瀏覽器啟用 JavaScript。</noscript>
+<script>
+const pages = [["封面", "我用 Codex 做了什麼", "一位教師的四個工作現場", "從一張考卷、一份研究、一批郵件，到一張要放進投影片的教材圖。我把平常手上的工作交給 Codex 協作，也在每一個關鍵處拿回來確認。", "個人體驗誌 ／ 01"], ["編者的話", "我從手邊的工作開始", "這四個案例都從一件本來就需要完成的事出發。", "我先說清楚誰會用、在哪裡用，以及交付時要看見什麼。做到一半，我會拿實際材料檢查，有時也會改口，把原本含糊的要求說得更具體。", "這本雜誌依既有對話重寫。頁內小示範以簡化內容重現操作。"], ["目錄", "四個工作現場", "選一個案例開始，也可以照順序翻閱。", "每個案例各四頁，從原始需求、修改過程，走到我怎麼確認成果。", ""], ["數學教材", "把考卷變成自學網頁", "我想讓孩子遇到卡住的題目時，可以自己聽、自己看，再做下一步。", "我提供三年級數學題目，請 Codex 轉成互動 HTML。22 道題目有了分步講解，也加入單獨朗讀與答案大字顯示。", "01 ／ 從紙本題目出發"], ["數學教材", "一題可以慢慢讀", "我把解題拆成孩子可以自行操作的步驟。", "從找線索、想方法、分步做，到會檢查、寫答案。孩子可以跳到需要的步驟，也能配合朗讀查看同步變色的文字。", "02 ／ 五步解題"], ["數學教材", "放大後，文字排成了一列", "有了大字還不夠。我看見容量單元在朗讀時，一個字排成一行。", "追查後發現，朗讀標記把文字拆成逐字元素，原本的格狀版面把它們當成一格一格來排。改成橫向文字容器之後，逐字高亮和正常閱讀都能保留。", "03 ／ 用實際操作找出問題"], ["數學教材", "把算式變成看得見的量", "容量換算可以先看見幾個完整公升，再看剩下多少毫升。", "我用這一題看教材怎麼同時呈現量感和算式。當時也檢查了 8000 毫升邊界值與 200% 字體放大。", "04 ／ 互動示範"], ["植栽研究", "同一份研究，面對不同讀者", "我需要把智慧植栽 RAG 專題寫進摘要、放進簡報，也讓路過海報的人看得懂。", "摘要要交代資料與方法，簡報要跟得上口頭說明，A1 海報則要讓讀者先從圖與圖說讀懂問題。Codex 協助我依不同媒介重新安排內容。", "01 ／ 從研究到發表"], ["植栽研究", "把資料規模說準確", "我回頭確認提供的材料、實際索引的手冊，以及切分後的區塊。", "共提供 8 份材料，實際索引 5 本中文栽培手冊，形成 277 個資料區塊。這些數字說明知識庫的規模。系統取回相關文字，再據此生成回答。", "02 ／ 8 份材料、5 本手冊、277 個區塊"], ["植栽研究", "把完成與示範分開寫", "手機畫面可以讓讀者更快理解系統，也容易讓人以為畫面裡的功能都經過驗證。", "我把已實作的文字檢索問答寫清楚，並在影像判讀和環境趨勢畫面加上示範標示。回答能追溯到資料來源，後續仍須用適切方法評估回答品質。", "03 ／ 讓圖說交代證據範圍"], ["植栽研究", "海報讓畫面先說話", "我希望讀者先看見操作流程，再讀方法和研究界線。", "結果區改用首頁、RAG 回答、查詢紀錄與環境介面四個手機畫面，配短圖說。最後依最新版 PDF 的位置替換高解析素材，另存 A1 版本。", "04 ／ 從畫面到輸出"], ["郵件整理", "先把篩選條件講清楚", "我的收件匣裡累積了學生來信，也留有大量同一種主旨的通知。", "我把工作拆成兩批。第一批用學校郵件網域和時間範圍篩選，第二批查找含指定文字的主旨。兩批都要求留下清冊。", "01 ／ 先定條件，再處理"], ["郵件整理", "兩批郵件，兩份清冊", "學生來信共 1,068 封，符合指定主旨的郵件共 2,582 封。", "兩批郵件移入垃圾桶後，各自留下一份 Excel。學生來信清冊包含寄件者、主旨與日期，主旨批次則記下寄件者姓名、地址和完整主旨。", "02 ／ 郵件可從垃圾桶找回"], ["郵件整理", "我用清冊看這次動了哪些信", "只看總數，我很難判斷這批資料是否符合原先說的範圍。", "把兩批分開記錄，我可以回頭對照每封信為何被納入，也能從清冊定位需要找回的郵件。", "03 ／ 批次作業留得下明細"], ["郵件整理", "如果先用四封範例信練習", "選一個條件，看看哪幾封會被納入。", "實際的郵件整理涉及私人資料，這裡用虛構郵件呈現兩種篩選方式，方便讀者對照。", "04 ／ 虛構資料，僅供示範"], ["教材去背", "「去背」要先說清楚去到哪裡", "一張齒輪圖裡有外圍格線，也有照片自己的淺綠底。這兩層背景可以分開處理。", "我試過只去外圈，以及連照片底色一起去除的版本。保留文字、箭頭與標註框，是我每一版都要檢查的條件。", "01 ／ 把範圍指出來"], ["教材去背", "同一張圖，可以有不同交付", "有些圖要放進投影片，有些圖要保留原卡片的樣子。", "齒輪和撓性傳動圖做成 16:9。清潔用具卡片則維持原尺寸與圓角框。各版另外輸出透明 PNG，方便回頭選擇合適的版本。", "02 ／ 用途決定比例"], ["教材去背", "我會看文字、細線和邊緣", "縮圖看起來乾淨，放大以後才看得見白邊、鋸齒和變色。", "去背時，我會對照原圖檢查箭頭、標籤和照片細節。部分細線或透明邊緣需要再修，這也讓我學會把驗收條件寫進一開始的要求。", "03 ／ 用原圖逐項比對"], ["教材去背", "試著選擇去背範圍", "用這張示意圖比較原圖、只去外圍，以及連照片底色一起去除。", "三種狀態保留同一個圖形與標籤。切換後可以看出，『去背』真正要交代的是哪一層、哪些物件要留。", "04 ／ 互動示範"], ["後記", "我把決定留在自己手上", "這四件事讓我重新想了一次，怎麼把一件工作交代到可以一起做。", "我會先交付原始材料和用途，再說清楚哪些地方可以改、哪些地方要保留。做到最後，我用孩子會不會操作、研究用語準不準、清冊對不對、圖片放大清不清楚來確認成果。", "一位教師的 Codex 個人體驗誌"]];
+const sections = [[1,"封面"],[2,"編者的話"],[4,"三年級數學無障礙自學"],[8,"TANet 智慧植栽研究"],[12,"Gmail 郵件整理"],[16,"教材圖像去背"],[20,"後記"]];
+const palettes = {"數學教材":["#236458","#deebe1"],"植栽研究":["#4b602c","#e7ecd6"],"郵件整理":["#315680","#e0e8f1"],"教材去背":["#884365","#f0e1e8"]};
+const captions = {
+1:["四個工作現場","教材 ／ 研究 ／ 行政 ／ 圖像"],
+2:["交代 → 試做 → 核對","從實際材料出發"],
+4:["22 題","紙本題目 → 互動教材"],
+5:["五個步驟","找線索 → 想方法 → 分步做 → 會檢查 → 寫答案"],
+6:["200%","把放大與朗讀一起測試"],
+8:["一份研究","摘要 ／ 簡報 ／ 網站 ／ 海報"],
+9:["8 → 5 → 277","提供材料 ／ 索引手冊 ／ 資料區塊"],
+10:["文字問答","文字檢索問答已實作；影像與環境畫面為示範"],
+11:["A1","四個手機畫面與高解析輸出"],
+12:["兩批條件","日期與網域 ／ 郵件主旨"],
+13:["1,068 ＋ 2,582","兩批移到垃圾桶的郵件數"],
+14:["Excel","寄件者 ／ 主旨 ／ 日期或地址"],
+16:["兩層背景","外圍格線 ／ 照片底色"],
+17:["16:9","投影版與原尺寸卡片各有用途"],
+18:["放大檢查","標籤 ／ 箭頭 ／ 邊緣"],
+20:["先說清楚","用途 ／ 保留範圍 ／ 驗收方式"]
+};
+const page = document.getElementById("page");
+const dialog = document.getElementById("contents");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+let current = 0;
+const pad = n => String(n).padStart(2,"0");
+const links = () => sections.map(([n,title]) => `<button type="button" data-page="${n}">${title}<span>${pad(n)} 頁</span></button>`).join("");
+document.getElementById("dialogLinks").innerHTML = links();
+
+function svg(kind) {
+ const shapes = {
+  book:'<path d="M26 47Q85 19 147 54V169Q83 136 26 157Z M147 54Q205 20 265 47V157Q205 136 147 169Z" fill="none" stroke="currentColor" stroke-width="4"/><path d="M49 72Q89 57 126 74 M49 95Q89 80 126 97 M49 118Q89 103 126 120 M168 74Q209 57 246 72 M168 97Q209 80 246 95 M168 120Q209 103 246 118" fill="none" stroke="currentColor" stroke-width="2"/>',
+  math:'<g fill="none" stroke="currentColor" stroke-width="3"><rect x="31" y="48" width="60" height="87" rx="5"/><rect x="114" y="48" width="60" height="87" rx="5"/><rect x="197" y="48" width="60" height="87" rx="5"/></g><path d="M32 87H90V134H32Z M115 70H173V134H115Z M198 110H256V134H198Z" fill="currentColor" opacity=".27"/><path d="M43 66h17m-17 15h10m73-15h17m-17 15h10m73-15h17m-17 15h10" stroke="currentColor" stroke-width="2"/>',
+  plant:'<path d="M147 151V65M147 99C99 98 83 66 81 36c43 4 67 25 66 63ZM147 120c49-1 72-32 74-66-44 4-73 26-74 66Z" fill="none" stroke="currentColor" stroke-width="4"/><path d="M58 151h178m-154 16h132m-108 15h84" stroke="currentColor" stroke-width="2" opacity=".65"/>',
+  mail:'<g fill="none" stroke="currentColor" stroke-width="4"><rect x="40" y="51" width="183" height="103" rx="6"/><path d="m42 55 90 65 89-65m15 17h25m-25 23h35m-35 23h22"/></g>',
+  image:'<rect x="36" y="39" width="217" height="124" rx="6" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="7 5"/><path d="m57 144 54-55 36 32 42-55 44 78Z" fill="currentColor" opacity=".35"/><circle cx="101" cy="69" r="13" fill="currentColor"/>'
+ };
+ return `<svg viewBox="0 0 292 197" aria-hidden="true">${shapes[kind]}</svg>`;
+}
+function panel(n, group) {
+ if (n === 3) return `<div class="artlabel tiny">CONTENTS</div><div class="toc">${links()}</div>`;
+ if (n === 7) return '<div class="artlabel tiny">容量換算練習</div><label for="volume">調整毫升數</label><input class="range" id="volume" type="range" min="0" max="8000" step="10" value="5080"><div class="visual-output"><div class="big" id="equation" aria-live="polite"></div><div class="fill" id="vessels" aria-hidden="true"></div></div>';
+ if (n === 15) return '<div class="artlabel tiny">虛構郵件篩選示範</div><div class="chips" id="filters"><button aria-pressed="true" data-filter="school">日期與網域</button><button aria-pressed="false" data-filter="subject">主旨包含指定文字</button></div><div class="visual-output"><p id="result" aria-live="polite"></p><table><thead><tr><th>寄件者</th><th>日期</th><th>主旨</th></tr></thead><tbody id="sampleMail"></tbody></table></div>';
+ if (n === 19) return '<div class="artlabel tiny">背景範圍示意</div><div class="chips" id="masks"><button aria-pressed="true" data-mask="0">原圖</button><button aria-pressed="false" data-mask="1">去外圍</button><button aria-pressed="false" data-mask="2">也去照片底</button></div><div id="maskPreview"></div>';
+ const kind = {"數學教材":"math","植栽研究":"plant","郵件整理":"mail","教材去背":"image"}[group] || "book";
+ const [heading,label] = captions[n];
+ return `<div class="artlabel tiny">FIELD NOTE / ${pad(n)}</div>${svg(kind)}<div class="big">${heading}</div><p>${label}</p>`;
+}
+function installDemo(n) {
+ if (n === 7) {
+  const input = document.getElementById("volume");
+  const update = () => {
+   const ml = Number(input.value);
+   const litres = Math.floor(ml / 1000);
+   const remainder = ml % 1000;
+   document.getElementById("equation").textContent = `${ml} = ${litres} × 1000 + ${remainder}`;
+   input.setAttribute("aria-valuetext", `${litres} 公升 ${remainder} 毫升`);
+   document.getElementById("vessels").innerHTML = '<span class="litre">1 L</span>'.repeat(litres) + (remainder ? `<span class="partial">${remainder} mL</span>` : "");
+  };
+  input.addEventListener("input",update);
+  update();
+ }
+ if (n === 15) {
+  const sample = [
+   ["學生甲","06/18","作品繳交",true,false],
+   ["學生乙","07/10","作品繳交",false,false],
+   ["自動通知","06/25","Great! 我已經收到你的資料了",false,true],
+   ["校外來信","06/25","研習報名",false,false]
+  ];
+  const group = document.getElementById("filters");
+  const update = key => {
+   const col = key === "school" ? 3 : 4;
+   document.getElementById("result").textContent = `符合 ${sample.filter(row => row[col]).length} 封（示範）`;
+   document.getElementById("sampleMail").innerHTML = sample.map(row => `<tr class="${row[col]?"matched":""}"><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}${row[col]?" ✓":""}</td></tr>`).join("");
+   group.querySelectorAll("button").forEach(button => button.setAttribute("aria-pressed",button.dataset.filter === key));
+  };
+  group.addEventListener("click",e => {if(e.target.dataset.filter) update(e.target.dataset.filter)});
+  update("school");
+ }
+ if (n === 19) {
+  const group = document.getElementById("masks");
+  const update = mode => {
+   const label = ["原圖保留兩層背景","外圍已透明，保留照片綠底","外圍及照片底均透明"][mode];
+   document.getElementById("maskPreview").innerHTML = `<svg viewBox="0 0 292 178" role="img" aria-label="${label}"><defs><pattern id="checker" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#fafafa"/><path d="M0 0h8v8H0zm8 8h8v8H8z" fill="#dedbdc"/></pattern><pattern id="grid" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#fff2cb"/><path d="M12 0H0v12" fill="none" stroke="#d5b877"/></pattern></defs><rect width="292" height="178" fill="url(#${mode===0?"grid":"checker"})"/><rect x="26" y="23" width="240" height="131" rx="8" fill="${mode<2?"#bad3ac":"none"}" stroke="#3b5840" stroke-width="2"/><circle cx="101" cy="87" r="36" fill="#4b5667" stroke="#28303a" stroke-width="9" stroke-dasharray="7 5"/><circle cx="101" cy="87" r="12" fill="#fffaf0"/><path d="M136 87h42" stroke="#27362f" stroke-width="2"/><rect x="169" y="70" width="79" height="34" rx="4" fill="#fffaf0" stroke="#27362f"/><text x="208" y="92" text-anchor="middle" fill="#252a28" font-size="15">齒輪標註</text></svg><p class="tiny" aria-live="polite">${label}</p>`;
+   group.querySelectorAll("button").forEach(button => button.setAttribute("aria-pressed",Number(button.dataset.mask) === mode));
+  };
+  group.addEventListener("click",e => {if(e.target.dataset.mask !== undefined) update(Number(e.target.dataset.mask))});
+  update(0);
+ }
+}
+function show(index, animate = true) {
+ const old = current;
+ current = Math.max(0,Math.min(index,pages.length-1));
+ const n = current+1;
+ const [group,title,deck,body,note] = pages[current];
+ const [accent,tint] = palettes[group] || ["#a13d25","#f0e1cd"];
+ document.documentElement.style.setProperty("--accent",accent);
+ document.documentElement.style.setProperty("--tint",tint);
+ page.className = n === 1 ? "page cover" : "page";
+ page.dataset.direction = current < old ? "back" : "forward";
+ page.innerHTML = `<div class="kicker"><span>${group}</span><span>個人應用 / 2026</span></div><div class="spread"><div class="copy"><h1 id="title" tabindex="-1">${title}</h1><p class="deck">${deck}</p><p>${body}</p></div><aside class="art">${panel(n,group)}</aside></div><div class="folio"><span>${note || "CODEX FIELD NOTES"}</span><span>${pad(n)} / 20</span></div>`;
+ document.getElementById("count").textContent = `${pad(n)} / 20`;
+ document.getElementById("progress").value = n;
+ prev.disabled = n === 1;
+ next.disabled = n === pages.length;
+ installDemo(n);
+ if (animate) {
+  void page.offsetWidth;
+  page.classList.add("turn");
+  window.scrollTo(0,0);
+  document.getElementById("title").focus({preventScroll:true});
+ }
+}
+prev.addEventListener("click",() => show(current-1));
+next.addEventListener("click",() => show(current+1));
+document.getElementById("openContents").addEventListener("click",() => dialog.showModal());
+document.addEventListener("click",e => {
+ const target = e.target.closest("[data-page]");
+ if (!target) return;
+ if (dialog.open) dialog.close();
+ show(Number(target.dataset.page)-1);
+});
+document.addEventListener("keydown",e => {
+ if (dialog.open || e.altKey || e.ctrlKey || e.metaKey || e.target.matches("input,textarea,select")) return;
+ if (e.key === "ArrowRight" && !next.disabled) {e.preventDefault();show(current+1)}
+ if (e.key === "ArrowLeft" && !prev.disabled) {e.preventDefault();show(current-1)}
+});
+let touchStart = null;
+page.addEventListener("touchstart",e => {
+ if (e.touches.length !== 1 || e.target.closest("button,input")) {touchStart=null;return}
+ touchStart = [e.touches[0].clientX,e.touches[0].clientY];
+},{passive:true});
+page.addEventListener("touchend",e => {
+ if (!touchStart) return;
+ const dx=e.changedTouches[0].clientX-touchStart[0];
+ const dy=e.changedTouches[0].clientY-touchStart[1];
+ touchStart=null;
+ if(Math.abs(dx)>65 && Math.abs(dx)>1.4*Math.abs(dy)) {
+  if(dx<0 && !next.disabled) show(current+1);
+  if(dx>0 && !prev.disabled) show(current-1);
+ }
+},{passive:true});
+page.addEventListener("touchcancel",() => {touchStart=null});
+show(0,false);
+</script>
+</body>
+</html>

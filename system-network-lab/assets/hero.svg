@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" fill="none" role="img" aria-label="以電腦、伺服器和地球網路組成的等角科技插畫">
+  <defs>
+    <linearGradient id="screen" x1="242" y1="100" x2="476" y2="350" gradientUnits="userSpaceOnUse"><stop stop-color="#163D50"/><stop offset="1" stop-color="#10192F"/></linearGradient>
+    <linearGradient id="rim" x1="212" y1="122" x2="477" y2="333" gradientUnits="userSpaceOnUse"><stop stop-color="#61F5D1"/><stop offset=".45" stop-color="#3AABBB"/><stop offset="1" stop-color="#8B72EF"/></linearGradient>
+    <linearGradient id="base" x1="238" y1="326" x2="465" y2="430" gradientUnits="userSpaceOnUse"><stop stop-color="#314058"/><stop offset="1" stop-color="#10182C"/></linearGradient>
+    <linearGradient id="server" x1="126" y1="140" x2="203" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#7464CF"/><stop offset="1" stop-color="#282449"/></linearGradient>
+    <radialGradient id="ambient"><stop stop-color="#164448" stop-opacity=".38"/><stop offset="1" stop-color="#164448" stop-opacity="0"/></radialGradient>
+    <radialGradient id="planet" cx=".35" cy=".28" r=".9"><stop stop-color="#245F68"/><stop offset=".7" stop-color="#122D45"/><stop offset="1" stop-color="#101A32"/></radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5"/></filter>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#7C96AE" opacity=".19"/></pattern>
+    <clipPath id="globe-clip"><circle cx="588" cy="204" r="69"/></clipPath>
+  </defs>
+
+  <ellipse cx="397" cy="282" rx="329" ry="225" fill="url(#ambient)"/>
+  <path d="M80 145 382 30 710 211 413 463 48 333Z" fill="url(#dots)" opacity=".7"/>
+  <ellipse cx="367" cy="427" rx="202" ry="31" fill="#060E1A" opacity=".5"/>
+
+  <!-- Routed paths connect the local system, storage, and wider network. -->
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <path d="m83 318 98 57 111-64M175 267l69 40M471 331l103 60 96-56M449 172l67-39 64 37" stroke="#315064" stroke-width="2"/>
+    <path d="m83 318 44 26 27-16M471 331l43 25 26-15M449 172l29-17 21 12" stroke="#64E7CE" stroke-width="2"/>
+    <path d="m544 279 39 23 64-37M155 114l64-37 82 47M325 432l43 25 98-57" stroke="#3E365F" stroke-width="2" stroke-dasharray="5 7"/>
+    <circle cx="83" cy="318" r="5" fill="#111F30" stroke="#5BE4CC" stroke-width="2"/>
+    <circle cx="670" cy="335" r="5" fill="#111F30" stroke="#5BE4CC" stroke-width="2"/>
+    <circle cx="647" cy="265" r="4" fill="#A69AF3"/>
+    <circle cx="301" cy="124" r="4" fill="#A69AF3"/>
+  </g>
+
+  <!-- Three-dimensional storage stack. -->
+  <g>
+    <path d="m110 142 57-33 57 33-57 34Z" fill="#7E71D9" stroke="#A79BF5" stroke-opacity=".6"/>
+    <path d="m110 142 57 34v118l-57-33Z" fill="url(#server)" stroke="#8979DB"/>
+    <path d="m167 176 57-34v119l-57 33Z" fill="#272844" stroke="#6E64A2"/>
+    <path d="m110 181 57 34 57-34M110 220l57 34 57-34" stroke="#AB9BEE" stroke-opacity=".45"/>
+    <path d="m123 167 25 15M123 206l25 15M123 245l25 15" stroke="#B6A8F5" stroke-width="3" stroke-linecap="round"/>
+    <path d="m183 182 21-12M183 221l21-12M183 260l21-12" stroke="#514B74" stroke-width="4" stroke-linecap="round"/>
+    <path d="m154 184 4 3M154 223l4 3M154 262l4 3" stroke="#76F5D5" stroke-width="3" stroke-linecap="round"/>
+    <path d="m140 141 26-15 26 15-26 15Z" fill="#C4BBFF" fill-opacity=".16" stroke="#C4BBFF" stroke-opacity=".6"/>
+  </g>
+
+  <!-- Floating laptop, tilted towards the learner. -->
+  <g>
+    <path d="m229 122 235 133 7 147-238-136Z" fill="#10182B" stroke="#2D3F55" stroke-width="3" stroke-linejoin="round"/>
+    <path d="m240 137 212 122 6 122-212-122Z" fill="url(#screen)" stroke="url(#rim)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="m242 139 209 120" stroke="#93F5DD" stroke-opacity=".45"/>
+    <path d="m233 266 238 136-115 68-238-139Z" fill="url(#base)" stroke="#3D4D64" stroke-width="2" stroke-linejoin="round"/>
+    <path d="m118 331 238 139v8L118 340Z" fill="#1B293D"/>
+    <path d="m356 470 115-68v9l-115 67Z" fill="#182236"/>
+    <path d="m145 331 87-50 211 122-86 51Z" fill="#121F32" stroke="#526277" stroke-opacity=".55"/>
+    <g stroke="#34475B" stroke-width="2">
+      <path d="m159 331 199 116M174 322l199 116M189 313l199 116M204 304l199 116M219 295l199 116"/>
+      <path d="m169 317 64 38M193 304l64 38M217 290l64 38M241 304l64 38M265 318l64 38M289 332l64 38M313 346l64 38M337 360l64 38M361 374l64 38"/>
+    </g>
+    <path d="m219 367 47-27 60 35-47 28Z" fill="#26374B" stroke="#536E7E" stroke-opacity=".7"/>
+    <path d="m340 469 17 10 28-16" stroke="#67EACD" stroke-opacity=".7" stroke-width="2"/>
+
+    <!-- Layered operating-system window. -->
+    <path d="m265 168 155 89 4 91-155-89Z" fill="#102B3C" stroke="#51D5C5" stroke-opacity=".55"/>
+    <path d="m265 168 155 89 1 17-155-89Z" fill="#16444A"/>
+    <path d="m275 180 1 .6m7 3.9 1 .6m7 3.9 1 .6" stroke="#88EDDA" stroke-width="3" stroke-linecap="round"/>
+    <path d="m281 205 46 27v31l-46-27Z" fill="#346B70" stroke="#72D9CB" stroke-opacity=".55"/>
+    <path d="m289 220 7-4 6 12m-6-12 1 20" stroke="#98F3DD" stroke-width="2" stroke-linejoin="round"/>
+    <path d="m337 240 65 37m-65-26 50 29m-49-18 59 34" stroke="#86B6BF" stroke-width="3" stroke-linecap="round"/>
+    <path d="m283 250 119 69m-119-59 84 49" stroke="#356572" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Network globe and orbiting data. -->
+  <g>
+    <circle cx="588" cy="204" r="78" stroke="#47DCC6" stroke-opacity=".16"/>
+    <circle cx="588" cy="204" r="70" fill="url(#planet)" stroke="#4DCABF" stroke-width="1.5"/>
+    <g clip-path="url(#globe-clip)" stroke="#4DAFAF" stroke-opacity=".55">
+      <ellipse cx="588" cy="204" rx="30" ry="70" transform="rotate(24 588 204)"/>
+      <ellipse cx="588" cy="204" rx="55" ry="70" transform="rotate(24 588 204)"/>
+      <ellipse cx="588" cy="204" rx="70" ry="26" transform="rotate(24 588 204)"/>
+      <path d="m530 150 127 56M519 194l121 55M553 133l-58 129m104-130-62 145m106-126-63 141"/>
+    </g>
+    <path d="m557 170 32 8 26 44-41 21-33-36Z" fill="#60D7BB" fill-opacity=".08" stroke="#66E1C6" stroke-width="1.5"/>
+    <path d="m557 170 17 73 15-65 26 44-58-52m-16 37 74 15" stroke="#70DCC7" stroke-opacity=".7"/>
+    <g fill="#B4FFE9"><circle cx="557" cy="170" r="4"/><circle cx="589" cy="178" r="4"/><circle cx="615" cy="222" r="4"/><circle cx="574" cy="243" r="4"/><circle cx="541" cy="207" r="4"/></g>
+    <ellipse cx="588" cy="204" rx="98" ry="28" transform="rotate(-30 588 204)" stroke="#9E8DDC" stroke-opacity=".6"/>
+    <path d="m668 157 10-6 10 6-10 6Z" fill="#C2ADFF"/><path d="m668 157 10 6v10l-10-6Z" fill="#8D77CF"/><path d="m678 163 10-6v10l-10 6Z" fill="#5F4E96"/>
+  </g>
+
+  <!-- Open, lightweight floating packets and system chip. -->
+  <g>
+    <path d="m345 87 37-21 37 21-37 22Z" fill="#152C3D" stroke="#62E6CC"/>
+    <path d="m345 87 37 22v36l-37-22Z" fill="#143D45" stroke="#62E6CC"/>
+    <path d="m382 109 37-22v36l-37 22Z" fill="#15313F" stroke="#62E6CC"/>
+    <path d="m357 88 25-14 25 14-25 14Z" fill="#4FC5B4" fill-opacity=".3"/>
+    <path d="m361 115 12 7m-12 2 12 7M393 118l12-7m-12 16 12-7" stroke="#8CEBD7" stroke-linecap="round"/>
+    <path d="m532 369 29-17 29 17-29 17Z" fill="#8270CA" stroke="#BAABF6"/>
+    <path d="m532 369 29 17v29l-29-17Z" fill="#4A416E" stroke="#8C7BC9"/>
+    <path d="m561 386 29-17v29l-29 17Z" fill="#322E50" stroke="#8C7BC9"/>
+    <path d="m543 369 18-10 18 10-18 11Z" fill="#CFBEFF" fill-opacity=".35"/>
+    <path d="m486 104 13-7 13 7-13 8Z" fill="#8DEBD5"/><path d="m486 104 13 8v14l-13-8Z" fill="#3B8D8B"/><path d="m499 112 13-8v14l-13 8Z" fill="#25606F"/>
+  </g>
+
+  <g fill="#71E7CE"><circle cx="95" cy="209" r="2"/><circle cx="283" cy="85" r="2"/><circle cx="475" cy="448" r="2"/><circle cx="692" cy="256" r="2"/></g>
+  <g stroke="#8996B5" stroke-linecap="round"><path d="M281 365v8m-4-4h8M637 108v8m-4-4h8M91 270v8m-4-4h8"/></g>
+</svg>

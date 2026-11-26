@@ -75,7 +75,8 @@
   }
   function render() {
     cleanup(); cleanup = () => {};
-    current = Math.min(36, Math.max(1, Number((location.hash.match(/^#\/lesson\/(\d+)(?:\/core)?$/) || [])[1]) || 1));
+    window.AnimationLab?.close();
+    current = Math.min(36, Math.max(1, Number((location.hash.match(/^#\/lesson\/(\d+)(?:\/core|\/sim\/[a-z0-9-]+)?$/) || [])[1]) || 1));
     const lesson = lessons[current - 1];
     state.last = current;
     if (!state.visited.includes(current)) state.visited.push(current);
@@ -97,7 +98,7 @@
     else if (lesson.mode === 'quiz') content = intro + illustration(lesson) + `<div class="quiz-wide">${quiz(lesson)}</div>` + `<div style="margin-top:24px">${knowledge}</div>` + takeaway;
     else if (lesson.mode === 'review') content = intro + illustration(lesson) + review() + takeaway;
     else if (lesson.mode === 'finish') content = intro + illustration(lesson) + finish() + takeaway;
-    else content = intro + illustration(lesson) + (window.renderCore?.(current)||'') + `<div class="learning-layout">${activity(lesson)}${knowledge}</div>` + takeaway;
+    else content = intro + (window.AnimationLab?.renderLaunchers(current)||'') + illustration(lesson) + (window.renderCore?.(current)||'') + `<div class="learning-layout">${activity(lesson)}${knowledge}</div>` + takeaway;
     $('#main').innerHTML = content;
     progress();
     bindActivity(lesson);
@@ -108,9 +109,10 @@
     $$('[data-goto]', $('#main')).forEach(el => el.addEventListener('click', () => goto(el.dataset.goto)));
     window.scrollTo({ top: 0, behavior: 'instant' });
     if(location.hash.endsWith('/core'))$('#core-'+current)?.scrollIntoView({block:'start'});
+    const animationId=location.hash.match(/\/sim\/([a-z0-9-]+)$/)?.[1];if(animationId)window.AnimationLab?.open(animationId,true);
   }
   function welcome(lesson) {
-    return `<div class="meta-line"><span class="tag">國中資訊科技</span><span class="tag purple">36 頁互動學習</span><span class="tag orange">從看懂到動手</span></div><section class="hero"><div><p class="eyebrow">READY FOR A DIGITAL ADVENTURE?</p><h1>電腦的秘密，<br>一起<em>動手解鎖！</em></h1><p>點開一個程式、連上一個網站，背後發生了什麼？<br>跟著概念圖與小實驗，一起認識作業系統與網路。</p><button class="primary" data-goto="2">啟動第一個探索</button><div class="hero-mini"><span><strong>36</strong>個學習頁面</span><span><strong>6</strong>個探索單元</span><span><strong>20</strong>題概念檢核</span></div></div><img class="hero-art" src="assets/knowledge-v3/guide-robot.png" alt="揮手邀請學生探索的機器人小導遊"></section>${illustration(lesson)}<div class="section-heading"><h2>選一個任務，開始冒險！</h2><span>點選單元，自由開始</span></div><div class="path-grid">${units.map((u,i)=>`<button class="path-card" data-goto="${i*6+1}"><small>UNIT ${num(i+1)} · ${num(i*6+1)}–${num(i*6+6)}</small><span class="card-icon" aria-hidden="true">${icon(['layers','cpu','monitor','network','globe','shield'][i])}</span><h3>${esc(u.title)}</h3><p>${esc(u.subtitle)}</p></button>`).join('')}</div><p class="small-print" style="margin-top:20px">${storageOK?'進度會儲存在此瀏覽器；作答不會上傳。':'瀏覽器目前無法保留進度，請在離開前到第 36 頁下載學習紀錄。'} 可自由跳頁，操作都在網頁內模擬。</p>`;
+    return `<div class="meta-line"><span class="tag">國中資訊科技</span><span class="tag purple">36 頁互動學習</span><span class="tag orange">從看懂到動手</span></div><section class="hero"><div><p class="eyebrow">READY FOR A DIGITAL ADVENTURE?</p><h1>電腦的秘密，<br>一起<em>動手解鎖！</em></h1><p>點開一個程式、連上一個網站，背後發生了什麼？<br>跟著概念圖與小實驗，一起認識作業系統與網路。</p><button class="primary" data-goto="2">啟動第一個探索</button><div class="hero-mini"><span><strong>36</strong>個學習頁面</span><span><strong>6</strong>個探索單元</span><span><strong>20</strong>題概念檢核</span><span><strong>24</strong>個立體動畫</span></div></div><img class="hero-art" src="assets/knowledge-v3/guide-robot.png" alt="揮手邀請學生探索的機器人小導遊"></section><section class="animation-home-link"><div><h2>讓看不見的原理，動起來！</h2><p>24個立體GIF先看流程，再切換互動模擬逐步觀察、改變條件。</p></div><button class="primary" data-open-animation-library>挑選動畫實驗</button></section>${illustration(lesson)}<div class="section-heading"><h2>選一個任務，開始冒險！</h2><span>點選單元，自由開始</span></div><div class="path-grid">${units.map((u,i)=>`<button class="path-card" data-goto="${i*6+1}"><small>UNIT ${num(i+1)} · ${num(i*6+1)}–${num(i*6+6)}</small><span class="card-icon" aria-hidden="true">${icon(['layers','cpu','monitor','network','globe','shield'][i])}</span><h3>${esc(u.title)}</h3><p>${esc(u.subtitle)}</p></button>`).join('')}</div><p class="small-print" style="margin-top:20px">${storageOK?'進度會儲存在此瀏覽器；作答不會上傳。':'瀏覽器目前無法保留進度，請在離開前到第 36 頁下載學習紀錄。'} 可自由跳頁，操作都在網頁內模擬。</p>`;
   }
   function taskHint(l) {
     const coreHints={2:'點選五大單元，找出CPU包含的兩個單元，再想想觸控螢幕為什麼有兩種角色。',8:'先用A、B、C觀察快取命中，再比較先存檔與未存檔就斷電的結果。',15:'切換文件、影像運算與多分頁情境，比較CPU、GPU與RAM用量。數值是示例，請說明分工理由。',16:'選RAID0、1或5，再點選磁碟模擬故障。比較陣列可用性與能否找回誤刪舊檔。',25:'逐層按封裝，再按接收端解封裝，對照TCP/IP四層與OSI七層。',26:'比較A、CNAME與PTR紀錄；兩個名稱查到同一IP，是否就能證明有別名？',30:'把向外請求、相符回應與未允許的新連入分開，看看具狀態追蹤的防火牆如何判斷。',33:'先試ipconfig，再用ping、tracert與nslookup找不同線索。留意RTT、TTL及DNS伺服器與目標IP的差別。'};
@@ -234,7 +236,7 @@
       $('#reset-progress').addEventListener('click',()=>{
         info('清除本機學習紀錄', '<p>這會移除此瀏覽器內的完成頁數、測驗答案與筆記。需要保留時，請先下載學習紀錄。</p><div class="control-row"><button class="secondary" id="cancel-reset">保留紀錄</button><button class="primary" id="confirm-reset">確認清除</button></div>');
         $('#cancel-reset').onclick=()=>$('#info-dialog').close();
-        $('#confirm-reset').onclick=()=>{state=fresh();window.resetCorePractice?.();save();$('#info-dialog').close();goto(1);toast('已清除本機學習紀錄');};
+        $('#confirm-reset').onclick=()=>{state=fresh();window.resetCorePractice?.();window.AnimationLab?.resetRecord();save();$('#info-dialog').close();goto(1);toast('已清除本機學習紀錄');};
       });
     }
   }
@@ -368,7 +370,7 @@
   }
   function info(title,html){$('#info-title').textContent=title;$('#info-body').innerHTML=html;$('#info-dialog').showModal();}
   function exportRecord(){
-    const record={course:'系統與網路探索站',version:5,revision:'圖解修正版',corePractice:window.getCorePractice?.()||[],exportedAt:new Date().toISOString(),completedPages:state.completed.map(id=>({id,title:lessons[id-1].title})),visitedPages:state.visited,quizzes:Object.entries(state.quizzes).map(([id,q])=>({...q,page:Number(id),title:lessons[Number(id)-1].title,questions:lessons[Number(id)-1].config.questions.map((item,i)=>({question:item.q,selected:item.options[q.selected[i]],correctAnswer:item.options[item.answer],correct:q.selected[i]===item.answer,explanation:item.explanation,reviewPage:item.review}))})),note:state.note,notice:'完成頁數為學生自行標記；成績為最近一次作答，可重做。未填個人身分，不代表正式能力認證。'};
+    const record={course:'系統與網路探索站',version:7,revision:'24立體GIF動畫版',animations:window.AnimationLab?.getRecord()||[],corePractice:window.getCorePractice?.()||[],exportedAt:new Date().toISOString(),completedPages:state.completed.map(id=>({id,title:lessons[id-1].title})),visitedPages:state.visited,quizzes:Object.entries(state.quizzes).map(([id,q])=>({...q,page:Number(id),title:lessons[Number(id)-1].title,questions:lessons[Number(id)-1].config.questions.map((item,i)=>({question:item.q,selected:item.options[q.selected[i]],correctAnswer:item.options[item.answer],correct:q.selected[i]===item.answer,explanation:item.explanation,reviewPage:item.review}))})),note:state.note,notice:'完成頁數為學生自行標記；成績為最近一次作答，可重做。未填個人身分，不代表正式能力認證。'};
     const serialized=JSON.stringify(record,null,2);
     const objectURL=URL.createObjectURL(new Blob([serialized],{type:'application/json;charset=utf-8'}));
     info('學習紀錄已準備好', `<p>請點選下方連結儲存 JSON 檔案。若瀏覽器沒有開始下載，也可以展開文字內容，複製後自行保存。</p><p><a class="primary download-link" href="${objectURL}" download="系統與網路探索站_學習紀錄.json">下載 JSON 學習紀錄</a></p><details><summary>展開完整紀錄文字</summary><label for="record-text" class="small-print">完整 JSON（可選取複製）</label><textarea id="record-text" class="notes-input" readonly rows="10">${esc(serialized)}</textarea></details>`);
@@ -382,7 +384,7 @@
   $('#open-map').onclick=openMap;$('#mobile-map').onclick=openMap;
   $$('.close-dialog').forEach(b=>b.onclick=()=>b.closest('dialog').close());
   $$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}}));
-  $('#help-button').onclick=()=>info('依你的步調探索','<ul><li>左側單元與「全部 36 頁」可自由跳頁，底部按鈕逐頁前進。</li><li>每頁有一張知識圖，可點選放大到200%或300%；互動概念圖節點另有說明。排序可拖曳，也可點選完成。</li><li>鍵盤 Tab 移到控制項，Enter 或空白鍵操作；左右方向鍵換頁。</li><li>按「放大字體」可加大內文；瀏覽器也可使用 200% 縮放。</li><li>學習標記與測驗成績分開記錄；作答可重做，複習頁依最近答案提供建議。</li><li>進度只保留在這個瀏覽器。第 36 頁可下載學習紀錄。</li></ul>');
+  $('#help-button').onclick=()=>info('依你的步調探索','<ul><li>左側單元與「全部 36 頁」可自由跳頁，底部按鈕逐頁前進。</li><li>相關頁面提供動畫實驗按鈕，按一下即播放；可暫停、單步、重播及更改情境。每頁有一張知識圖，可點選放大到200%或300%；互動概念圖節點另有說明。排序可拖曳，也可點選完成。</li><li>鍵盤 Tab 移到控制項，Enter 或空白鍵操作；左右方向鍵換頁。</li><li>按「放大字體」可加大內文；瀏覽器也可使用 200% 縮放。</li><li>學習標記與測驗成績分開記錄；作答可重做，複習頁依最近答案提供建議。</li><li>進度只保留在這個瀏覽器。第 36 頁可下載學習紀錄。</li></ul>');
   $('#teaching-button').onclick=()=>info('教學與使用說明','<p>課程共有36頁，包含文字講解、知識圖、操作模型與概念練習。可依單元順序學習，也能從目錄自由選頁。</p><p>圖片中的機器人與場景用來幫助理解；操作皆在網頁中模擬，不會更改裝置設定或測量真實網路。</p><p>學習進度、答案與筆記保留在目前瀏覽器，第36頁可匯出紀錄。建議安排6–8節課，保留預測、操作與討論時間。</p><p><a href="course-plan.html" target="_blank" rel="noopener">教師課程安排</a> · <a href="knowledge-atlas.html" target="_blank" rel="noopener">知識圖總覽</a></p>');
   document.addEventListener('keydown',e=>{if($$('dialog').some(d=>d.open)||e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT|BUTTON/.test(document.activeElement.tagName))return;if(e.key==='ArrowRight'&&current<36){e.preventDefault();goto(current+1);}if(e.key==='ArrowLeft'&&current>1){e.preventDefault();goto(current-1);}});
   window.addEventListener('hashchange',()=>{render();$('#main').focus({preventScroll:true});});

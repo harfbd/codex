@@ -24,3 +24,5 @@
 
 /* Keep the labels in the GIF readable and the caption unobstructed. */
 .animation-gif-stage{display:block;height:auto;min-height:0;max-height:70vh;aspect-ratio:auto;overflow:auto}.animation-gif-stage>img{position:static;width:100%;height:auto;min-width:640px}.animation-gif-topline{display:none}
+
+.animation-launch-grid.single{grid-template-columns:minmax(0,1fr)}

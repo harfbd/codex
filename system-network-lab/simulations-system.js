@@ -137,7 +137,7 @@
   });
 
   defs.push({
-    id:'fetch-execute',lesson:7,title:'取指、解碼與執行',
+    id:'fetch-execute',lesson:6,title:'取指、解碼與執行',
     intro:'把一條簡化指令與它要使用的資料分開追蹤。',
     prompt:'指令和運算資料分別在什麼時候進入 CPU？哪個單元解讀指令？',
     limit:'使用自編教學指令與單一工作暫存器，省略部分暫存器、匯流排與時序細節。',
@@ -214,7 +214,7 @@
   });
 
   defs.push({
-    id:'cache-lookup',lesson:8,title:'快取命中與逐層查找',
+    id:'cache-lookup',lesson:12,title:'快取命中與逐層查找',
     intro:'指定第一個找到資料 A 的位置，觀察查找與回傳走到哪一層。',
     prompt:'L1 未命中時代表什麼？為什麼不等於資料已經遺失？',
     limit:'L1、L2 通常整合於 CPU 內，圖中分開方便觀察查找層級；不量測真實延遲，也不模擬快取替換、填入與一致性策略。',

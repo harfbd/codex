@@ -100,7 +100,7 @@
   });
 
   window.ANIMATION_DEFS.push({
-    id:'raid-rebuild',lesson:16,title:'RAID 5：一顆磁碟故障後的重建',
+    id:'raid-rebuild',lesson:18,title:'RAID 5：一顆磁碟故障後的重建',
     intro:'用同一資料條帶的其餘區塊，計算可恢復的缺失值。',
     prompt:'比較一顆與兩顆磁碟故障：單一同位檢查能提供多少已知線索？',
     limit:'以可識別的磁碟故障和四顆磁碟示範。未模擬重建期間再次故障等複雜風險；獨立備份仍然必要。',
@@ -151,7 +151,7 @@
   });
 
   window.ANIMATION_DEFS.push({
-    id:'router-next-hop',lesson:21,title:'路由器如何選下一站？',
+    id:'router-next-hop',lesson:24,title:'路由器如何選下一站？',
     intro:'切換目的 IP，觀察查路由資訊後的轉送方向。',
     prompt:'是哪個欄位使本例的下一站不同？下一站是否就等於整段旅程？',
     limit:'以兩個文件用 IPv4 網段示範下一站選擇；略去 NAT、動態路由與更多中間節點，不代表地圖最短路徑。',

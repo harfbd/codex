@@ -26,3 +26,13 @@
 .animation-gif-stage{display:block;height:auto;min-height:0;max-height:70vh;aspect-ratio:auto;overflow:auto}.animation-gif-stage>img{position:static;width:100%;height:auto;min-width:640px}.animation-gif-topline{display:none}
 
 .animation-launch-grid.single{grid-template-columns:minmax(0,1fr)}
+
+/* Spoken explanations share the same controls in both observation modes. */
+.animation-voice-panel{margin:0 0 24px;padding:20px 22px;border:1px solid #badfd4;border-radius:18px;background:linear-gradient(120deg,#e6f8f0,#f1f1ff);color:#2c4f59}
+.animation-voice-toolbar,.animation-voice-buttons,.animation-voice-label{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.animation-voice-toolbar{justify-content:space-between}.animation-voice-label{font-size:1.06rem;font-weight:750}.animation-voice-label svg{flex:none;color:#237c6a}
+.animation-voice-buttons{gap:8px}.animation-voice-buttons button{min-height:44px;font-size:1rem;background:#fff}.animation-voice-buttons [aria-pressed=true]{border-color:#389c7e;background:#d1f3e4;color:#1a604c}
+#animation-voice-status{font-size:.94rem;line-height:1.7;margin:14px 0 8px;color:#426675}
+.animation-voice-caption{font-size:1.12rem;line-height:1.95;margin:0;padding:14px 16px;background:#ffffffd9;border-radius:12px;overflow-wrap:anywhere}
+.animation-voice-help{font-size:.9rem;line-height:1.8;margin:12px 0 0;color:#5d6c80}.animation-voice-panel[data-state=error] #animation-voice-status{color:#97415b}
+@media(max-width:700px){.animation-voice-panel{padding:17px 15px}.animation-voice-toolbar{align-items:flex-start;gap:14px}.animation-voice-buttons{width:100%}.animation-voice-buttons button{flex:1}.animation-voice-caption{font-size:1.08rem;padding:12px}}
